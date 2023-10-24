@@ -1,14 +1,14 @@
+import ListApps from "list-apps";
 import { registerApplication, start } from "single-spa";
 
-registerApplication({
-  name: "app1",
-  app: () => import("app1"),
-  activeWhen: ["/app/spas"],
-});
-
-registerApplication({
-  name: "app2",
-  app: () => import("app2"),
-});
+if (Array.isArray(ListApps)) {
+  ListApps.forEach(({ name, activeWhen }) => {
+    registerApplication({
+      name: name,
+      app: () => import(name),
+      activeWhen: activeWhen,
+    });
+  });
+}
 
 start({ urlRerouteOnly: true });

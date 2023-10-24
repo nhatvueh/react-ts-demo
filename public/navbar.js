@@ -6,8 +6,8 @@ const lifecycles = singleSpaReact({
   React,
   ReactDOMClient,
   rootComponent: () =>
-    React.createElement("h1", { className: "app1" }, "Application 1"),
-  domElementGetter: () => document.getElementById("app1"),
+    React.createElement("div", { className: "navbar" }, "Navbar"),
+  domElementGetter: () => document.getElementById("navbar"),
   errorBoundary: (err, info, props) =>
     React.createElement(
       "h1",

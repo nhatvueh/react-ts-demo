@@ -5,9 +5,8 @@ import singleSpaReact from "single-spa-react";
 const lifecycles = singleSpaReact({
   React,
   ReactDOMClient,
-  rootComponent: () =>
-    React.createElement("h1", { className: "app1" }, "Application 1"),
-  domElementGetter: () => document.getElementById("app1"),
+  rootComponent: () => React.createElement("div", { className: "" }, "Footer"),
+  domElementGetter: () => document.getElementById("foot"),
   errorBoundary: (err, info, props) =>
     React.createElement(
       "h1",
